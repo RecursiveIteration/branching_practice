@@ -123,7 +123,15 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(testArray){ //eslint-disable-line
-
+  var product = multiply(testArray[0], testArray[1])[0];
+  for (var i = 2; i < testArray.length; i++) {
+    product = multiply(product, testArray[i])[0];
+  }
+  var elements = listElements(testArray);
+  return [
+    product,
+    'The numbers ' + elements + ' have a product of ' + product + '.'
+  ];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
